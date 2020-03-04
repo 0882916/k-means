@@ -1,6 +1,7 @@
 import datetime
 import json
 import urllib.request
+from starter import *
 
 NOCACHE = False
 
@@ -68,10 +69,10 @@ class Machine_Learning_Data():
 
 
 if __name__ == '__main__':
-    data = Machine_Learning_Data("1234567")
 
+    data = Machine_Learning_Data("0882916")
 
-    kmeans_training = data.kmeans_traing()
+    kmeans_training = data.kmeans_training()
 
     for p in kmeans_training:
             print(p)

@@ -27,7 +27,7 @@ def extract_from_json_as_np_array(key, json_data):
 
 STUDENTNUMMER = "0882916" # TODO: aanpassen aan je eigen studentnummer
 
-assert STUDENTNUMMER != "0882916", "Verander 1234567 in je eigen studentnummer"
+assert STUDENTNUMMER != "1234567", "Verander 1234567 in je eigen studentnummer"
 
 print("STARTER CODE")
 

@@ -2,7 +2,6 @@ import datetime
 import json
 import urllib.request
 
-
 NOCACHE = False
 
 # 20-04-2019: server changed to https
@@ -66,8 +65,6 @@ class Machine_Learning_Data():
                     # print(response)
 
                     return response.read().decode('utf8')
-
-
 
 
 if __name__ == '__main__':

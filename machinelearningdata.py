@@ -49,7 +49,7 @@ class Machine_Learning_Data():
 
         def classification_test(self, y=None):
                 if y == None:
-                        date_string = '{0:%Y-%m-%d}'.format(datetime.datetime.now())  # elke daga andere test-data
+                        date_string = '{0:%Y-%m-%d}'.format(datetime.datetime.now())  # elke dag andere test-data
                         return self.get_data(SERVER_URL + self.studentnummer + "/classification/test", self.studentnummer + "-" + date_string + "-classification-test")
                 else:
                     assert type(y) is list, "Stuur de classificaties als lijst"
@@ -66,7 +66,6 @@ class Machine_Learning_Data():
                     # print(response)
 
                     return response.read().decode('utf8')
-
 
 if __name__ == '__main__':
 

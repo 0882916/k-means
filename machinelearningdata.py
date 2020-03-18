@@ -1,6 +1,7 @@
 import datetime
 import json
 import urllib.request
+from starter import *
 
 NOCACHE = False
 
@@ -48,7 +49,7 @@ class Machine_Learning_Data():
 
         def classification_test(self, y=None):
                 if y == None:
-                        date_string = '{0:%Y-%m-%d}'.format(datetime.datetime.now())  # elke daga andere test-data
+                        date_string = '{0:%Y-%m-%d}'.format(datetime.datetime.now())  # elke dag andere test-data
                         return self.get_data(SERVER_URL + self.studentnummer + "/classification/test", self.studentnummer + "-" + date_string + "-classification-test")
                 else:
                     assert type(y) is list, "Stuur de classificaties als lijst"
@@ -66,12 +67,11 @@ class Machine_Learning_Data():
 
                     return response.read().decode('utf8')
 
-
 if __name__ == '__main__':
-    data = Machine_Learning_Data("1234567")
 
+    data = Machine_Learning_Data("0882916")
 
-    kmeans_training = data.kmeans_traing()
+    kmeans_training = data.kmeans_training()
 
     for p in kmeans_training:
             print(p)

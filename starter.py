@@ -10,12 +10,14 @@ Benodigde libraries:
 - sklearn
 
 """
-from machinelearningdata import Machine_Learning_Data
 import numpy as np
 import matplotlib.pyplot as plt
+
 from sklearn.metrics import accuracy_score
 from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
+
+from machinelearningdata import Machine_Learning_Data
 
 def extract_from_json_as_np_array(key, json_data):
     """ helper functie om data uit de json te halen en om te zetten naar numpy array voor sklearn"""
@@ -59,7 +61,7 @@ colors = ["r.", "b.", "g.", "c.", "m.", "y.", "k."]
 # teken de punten
 for i in range(len(X)):
     # plt.plot(x[i], y[i], 'k.') # k = zwart
-    plt.plot(X[i][0], X[i][1], colors[labels[i]], markersize = "10")
+    plt.plot(X[i][0], X[i][1], colors[labels[i]])
 
 plt.axis([min(x), max(x), min(y), max(y)])
 
@@ -100,5 +102,5 @@ X_test = extract_from_json_as_np_array("x", classification_test)
 Z = np.zeros(100) # dit is een gok dat alles 0 is... kan je zelf voorspellen hoeveel procent er goed is?
 
 # stuur je voorspelling naar de server om te kijken hoe goed je het gedaan hebt
-classification_test = data.classification_test(Z.tolist()) # tolist zorgt ervoor dat het numpy object uit de predict omgezet wordt naar een 'normale' lijst van 1'en en 0'en
-print("Classificatie accuratie (test): " + str(classification_test))
+# classification_test = data.classification_test(Z.tolist()) # tolist zorgt ervoor dat het numpy object uit de predict omgezet wordt naar een 'normale' lijst van 1'en en 0'en
+# print("Classificatie accuratie (test): " + str(classification_test))

@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     data = Machine_Learning_Data("0882916")
 
-    kmeans_training = data.kmeans_training()
+#     kmeans_training = data.classification_training()
 
-    for p in kmeans_training:
-            print(p)
+#     for p in kmeans_training:
+#             print(p)

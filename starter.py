@@ -83,7 +83,7 @@ X = extract_from_json_as_np_array("x", classification_training)
 # dit zijn de werkelijke waarden, daarom kan je die gebruiken om te trainen
 Y = extract_from_json_as_np_array("y", classification_training)
 
-kfold = KFold(2, True, 1)
+kfold = KFold(5, False, None)
 # enumerate splits
 for train, test in kfold.split(X):
     print('train: %s, test: %s' % (X[train], X[test]))

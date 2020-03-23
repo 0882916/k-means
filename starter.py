@@ -32,7 +32,7 @@ def extract_from_json_as_np_array(key, json_data):
 
     return np.array(data_as_array)
 
-STUDENTNUMMER = "0882916" # TODO: aanpassen aan je eigen studentnummer
+STUDENTNUMMER = "0882916" # aanpassen aan je eigen studentnummer
 
 assert STUDENTNUMMER != "1234567", "Verander 1234567 in je eigen studentnummer"
 
@@ -69,7 +69,7 @@ plt.axis([min(x), max(x), min(y), max(y)])
 
 plt.scatter(centroids[:, 0], centroids[:, 1], marker = "x", s = 150, linewidths = 25, zorder = 10)
 
-plt.show()
+# plt.show()
 
 
 # SUPERVISED LEARNING
@@ -86,7 +86,7 @@ Y = extract_from_json_as_np_array("y", classification_training)
 kfold = KFold(5, False, None)
 # enumerate splits
 for train, test in kfold.split(X):
-    print('train: %s, test: %s' % (X[train], X[test]))
+    # print('train: %s, test: %s' % (X[train], X[test]))
     X_train, X_test = X[train], X[test]
     Y_train, Y_test = Y[train], Y[test]
 
@@ -100,8 +100,7 @@ for i in range(len(x_2)):
 
 plt.axis([min(x_2), max(x_2), min(y_2), max(y_2)])
 
-# toon alle punten zonder classificatie
-plt.show()
+# plt.show() # toon alle punten zonder classificatie
 
 
 # DECISION TREE
@@ -123,7 +122,7 @@ print("Decision tree accuratie (score): " + str(clf_score))
 # vergelijk Y_predict met de echte Y om te zien hoe goed je getraind hebt
 plt.scatter(x_2, y_2, c = Y_predict, s = 10)
 
-plt.show() # toont geclassificeerde labels 0 en 1 in verschillende kleuren
+# plt.show() # toont geclassificeerde labels 0 en 1 in verschillende kleuren
 
 # haal data op om te testen
 classification_test = data.classification_test()
@@ -166,7 +165,7 @@ print("Logistic regression accuratie (score): " + str(lgc_score))
 # vergelijk Y_predict met de echte Y om te zien hoe goed je getraind hebt
 plt.scatter(x_2, y_2, c = Y_predict, s = 10)
 
-plt.show() # toont geclassificeerde labels 0 en 1 in verschillende kleuren
+# plt.show() # toont geclassificeerde labels 0 en 1 in verschillende kleuren
 
 # haal data op om te testen
 classification_test = data.classification_test()

@@ -1,7 +1,6 @@
 import datetime
 import json
 import urllib.request
-from starter import *
 
 NOCACHE = False
 

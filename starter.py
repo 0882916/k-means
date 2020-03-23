@@ -20,6 +20,7 @@ from sklearn.datasets import make_blobs
 from sklearn import tree
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import KFold
 
 from machinelearningdata import Machine_Learning_Data
 
@@ -82,6 +83,13 @@ X = extract_from_json_as_np_array("x", classification_training)
 # dit zijn de werkelijke waarden, daarom kan je die gebruiken om te trainen
 Y = extract_from_json_as_np_array("y", classification_training)
 
+kfold = KFold(2, True, 1)
+# enumerate splits
+for train, test in kfold.split(X):
+    print('train: %s, test: %s' % (X[train], X[test]))
+    X_train, X_test = X[train], X[test]
+    Y_train, Y_test = Y[train], Y[test]
+
 # leer de classificaties
 x_2 = X[...,0]
 y_2 = X[...,1]
@@ -101,7 +109,7 @@ plt.show()
 # train deze punten in een decision tree
 clf = tree.DecisionTreeClassifier()
 
-clf = clf.fit(X, Y)
+clf = clf.fit(X_train, Y_train)
 
 # voorspel na het trainen de Y-waarden (je gebruikt hiervoor dus niet meer de
 #       echte Y-waarden, maar enkel de X en je getrainde classifier) en noem deze
